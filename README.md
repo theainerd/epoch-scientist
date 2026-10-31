@@ -67,9 +67,9 @@ flowchart LR
 * **Blind task packs** (`tasks/`): a plain-language problem statement, a physics helper library (`sim.py`), the official
   AstroAgentBench verifier flattened into one frozen file, an evaluator with fixed time limits and SHA-256 integrity checks,
   and a deliberately simple starting program.
-* **Search** (`runner/`): AI-Scientist-v3 drives the loop; each step is an OpenCode agent session running `meta/muse-wonder-1.0`
-  through a Meta provider patch, on a Kaggle CPU notebook,
-  web tools disabled. Each worker keeps its own best valid program as the parent; all workers share lessons.
+* **Search** (`runner/`): **Meta Muse Wonder** (`meta/muse-wonder-1.0`) is the intelligence layer that drives all the reasoning: it
+  proposes each idea, writes and fixes the code, and learns from the scores. The harness around it only runs its steps, on a Kaggle CPU
+  notebook with web tools disabled. Each worker keeps its own best valid program as the parent; all workers share lessons.
 * **Judging** (`analysis/`, `yardsticks/`): the best program is re-scored on sealed missions and compared with the
   benchmark's reference solvers, an exact MILP (AEOSSP) and the published agent results.
 
