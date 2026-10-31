@@ -1,5 +1,3 @@
-<p align="left"><img src="assets/epoch_logo.png" height="56" alt="Epoch Discovery"></p>
-
 # Muse Scientist
 
 **An AI scientist that improves satellite mission planners on its own.**
@@ -110,4 +108,4 @@ Running a new blind search with Muse on Kaggle: see [docs/reproduce.md](docs/rep
 
 Our code: MIT ([LICENSE](LICENSE)). AstroAgentBench (MIT, OpenMOSS-Team) verifier code and mission files; AI-Scientist-v3
 (Apache-2.0, Sakana AI) is downloaded at run time and patched with `runner/patches/meta_provider.patch`. See [NOTICE.md](NOTICE.md).
-Built by **Epoch Discovery** for Meta's *Push the Frontier* hackathon, with Meta Muse Wonder, OpenCode and AI-Scientist-v3.
+Built for Meta's *Push the Frontier* hackathon, with Meta Muse Wonder, OpenCode and AI-Scientist-v3.

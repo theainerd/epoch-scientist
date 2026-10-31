@@ -73,13 +73,10 @@ BRAND_DIR = ASSETS
 
 
 def add_brand(fig):
-    """Footer brand row (bottom-left, above every layer): Epoch Discovery logo + name, and the Meta mark.
+    """Footer brand row (bottom-left, above every layer): the Meta mark.
     Uses meta_logo.png if it exists in BRAND_DIR, otherwise a text mark."""
     import os, matplotlib.image as mi
-    H = 0.040; lg = mi.imread(os.path.join(BRAND_DIR, 'epoch_logo.png')); w = H * 1080 / 1920 * lg.shape[1] / lg.shape[0]
-    a = fig.add_axes([0.012, 0.006, w, H], zorder=60); a.imshow(lg); a.axis('off')
-    fig.text(0.014 + w, 0.026, 'Epoch Discovery', fontsize=SMALL + 1, fontweight='bold', color='#d4f7b5', va='center', zorder=61)
-    fig.text(0.112 + w, 0.026, '|', fontsize=SMALL + 2, color=FAINT, va='center', zorder=61)
+    H = 0.040; w = -0.098
     mp = os.path.join(BRAND_DIR, 'meta_logo.png')
     if os.path.exists(mp):
         ml = mi.imread(mp); mw = H * 1080 / 1920 * ml.shape[1] / ml.shape[0]
