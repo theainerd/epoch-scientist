@@ -53,17 +53,6 @@ Both blind runs were tracked live in W&B (finished runs only):
 
 <p align="center"><img src="assets/discovery_loop.png" width="900" alt="What Meta Muse Wonder gets, the autonomous discovery loop, and the sealed evaluation"></p>
 
-```mermaid
-flowchart LR
-    T[task.md + simulator + frozen scorer] --> M1
-    subgraph W[each of 2 workers, 10 cycles]
-      M1[1 Read shared memory] --> M2[2 Propose one idea] --> M3[3 Edit a copy of the parent program] --> M4[4 Score on dev missions] --> M5{5 Valid and better?}
-      M5 -- yes --> P[new parent] --> M1
-      M5 -- no --> L[discard, keep the lesson] --> M1
-    end
-    P --> S[sealed missions + hidden yardsticks, after the run]
-```
-
 * **Blind task packs** (`tasks/`): a plain-language problem statement, a physics helper library (`sim.py`), the official
   AstroAgentBench verifier flattened into one frozen file, an evaluator with fixed time limits and SHA-256 integrity checks,
   and a deliberately simple starting program.
