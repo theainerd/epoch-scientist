@@ -7,6 +7,10 @@ has train and test missions, reference solvers, and an **official verifier**: a 
 plan and returns valid/invalid plus metrics. The paper reports five coding agents (Codex CLI + GPT-5.4, Kimi CLI + Kimi K2.6,
 OpenCode + DeepSeek V4 Pro, Claude Code + Claude Opus 4.6, OpenCode + MiniMax M2.7) against the reference solvers.
 
+<p align="center"><img src="../assets/astroagentbench_overview.png" width="760" alt="AstroAgentBench: problem setup, agent planning, external evaluation"></p>
+
+For more details, see the [paper](https://arxiv.org/abs/2601.11354).
+
 We used two families. In both, **the verifier is the only judge**. We merged each verifier into one file without changing
 code (`data/flatten_*.py`) and check byte-identity against the official source (`make check-verifiers`).
 

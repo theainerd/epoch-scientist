@@ -5,6 +5,10 @@
 We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/AstroAgentBench)
 ([paper](https://arxiv.org/abs/2601.11354)), and judge every result on **sealed missions** that Muse never saw.
 
+<p align="center"><img src="assets/astroagentbench_overview.png" width="760" alt="AstroAgentBench: problem setup, agent planning, external evaluation"></p>
+
+<sub>AstroAgentBench: the agent gets the case files and tools, plans, and an independent verifier scores the plan. For more details, see the [paper](https://arxiv.org/abs/2601.11354).</sub>
+
 | | Earth-observation scheduling (AEOSSP) | Revisit constellation design |
 |---|---|---|
 | Task | 20-40 satellites choose which of ~1,700-4,000 photo requests to take in 12 h, without emptying any battery | design the smallest constellation that photographs every place at least every 6 or 8 h for 48 h |
