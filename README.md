@@ -103,7 +103,7 @@ media/        videos and stills;  docs/  method, problems, results, ideas;  asse
 ## Quick start
 
 ```bash
-conda env create -f environment.yml && conda activate muse-scientist
+conda env create -f environment.yml && conda activate epoch-scientist
 make fetch              # AstroAgentBench -> external/AstroAgentBench (MIT)
 make check-verifiers    # frozen verifiers are byte-identical to the official code
 make smoke              # starting programs reproduce their dev scores; best programs score one sealed mission

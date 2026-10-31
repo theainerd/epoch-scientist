@@ -1,4 +1,4 @@
-# Muse Scientist - common tasks. Paths can be overridden: AAB_DIR, MS_WORK, FFMPEG.
+# Epoch Scientist - common tasks. Paths can be overridden: AAB_DIR, MS_WORK, FFMPEG.
 PY ?= python
 WORK ?= $(if $(MS_WORK),$(MS_WORK),work)
 AAB ?= $(if $(AAB_DIR),$(AAB_DIR),external/AstroAgentBench)

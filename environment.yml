@@ -1,4 +1,4 @@
-name: muse-scientist
+name: epoch-scientist
 channels: [conda-forge]
 dependencies:
   - python=3.12

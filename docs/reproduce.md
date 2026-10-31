@@ -2,7 +2,7 @@
 
 ## Score the shipped programs (laptop, no Muse needed)
 ```bash
-conda env create -f environment.yml && conda activate muse-scientist
+conda env create -f environment.yml && conda activate epoch-scientist
 make fetch check-verifiers smoke
 make sealed-revisit                       # ~10 min
 SPLITS="train test test_easy test_hard test_horizon_2022" make pack-aeossp && make sealed-aeossp
