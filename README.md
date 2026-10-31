@@ -1,15 +1,6 @@
 # Epoch Scientist
 
-Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an AI-Scientist-v3 loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
-
-**Meta Muse Wonder as an AI scientist: it improves satellite mission planners on its own.**
-
-Every idea, every line of code and every fix in this repository was written by **Meta Muse Wonder** (`meta/muse-wonder-1.0`).
-Starting from a simple planner, it proposed, coded and tested one change at a time, and a frozen, official scorer decided what
-was kept. It got only the problem statement, a simulator and the scorer: **no papers, no reference code, no web, no published
-scores**. On both problems it beat its starting program, on sealed missions it never saw.
-
-<sub>Around the model: OpenCode (coding-agent harness), Sakana AI-Scientist-v3 (search loop), AstroAgentBench (problems and official verifier).</sub>
+> Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an AI-Scientist-v3 loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
 We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/AstroAgentBench)
 ([paper](https://arxiv.org/abs/2601.11354)), and judge every result on **sealed missions** that Muse never saw.
