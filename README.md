@@ -1,5 +1,7 @@
 # Muse Scientist
 
+> Muse gets only the problem, a simulator and a fixed score. With no internet, no papers and no reference code, it runs its own experiments from a simple baseline. Then we reveal the hidden expert solvers.
+
 **Meta Muse Wonder as an AI scientist: it improves satellite mission planners on its own.**
 
 Every idea, every line of code and every fix in this repository was written by **Meta Muse Wonder** (`meta/muse-wonder-1.0`).
@@ -44,6 +46,15 @@ We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/Ast
 | [media/video/revisit_before_after.mp4](media/video/revisit_before_after.mp4) | sealed mission: 20 → 10 satellites, every place on time (score 67.7 → 85.8) |
 | [media/video/aeossp_before_after.mp4](media/video/aeossp_before_after.mp4) | hard sealed mission: the start empties 3 batteries (plan invalid, score 0); Muse stays valid (77.9) |
 | [media/video/search_aeossp.mp4](media/video/search_aeossp.mp4) | the search replay for the scheduling problem, including an idea passed from worker 1 to worker 2 |
+
+## Run logs (Weights & Biases)
+
+Both blind runs were tracked live in W&B (finished runs only):
+
+| Problem | Run | Result |
+|---|---|---|
+| Satellite photo scheduling (AEOSSP) | [aeossp-blind-muse-wonder-1.0-1030-0829](https://wandb.ai/surya-ws2/aisci-aeossp/runs/bcw9vydb) | best dev 76.63, 20 programs scored |
+| Constellation design (Revisit) | [revisit-blind-muse-wonder-1.0-1030-1632](https://wandb.ai/surya-ws2/aisci-revisit/runs/z3vvh4ce) | best dev 77.82, 20 programs scored |
 
 ## How it works
 
