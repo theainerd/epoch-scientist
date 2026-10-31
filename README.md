@@ -1,13 +1,14 @@
 # Muse Scientist
 
-**An AI scientist that improves satellite mission planners on its own.**
+**Meta Muse Wonder as an AI scientist: it improves satellite mission planners on its own.**
 
-**Stack:** Meta **Muse Wonder** (model)  +  **OpenCode** (coding-agent harness)  +  Sakana **AI-Scientist-v3** (research loop)  +  **AstroAgentBench** (problems and official verifier).
+Every idea, every line of code and every fix in this repository was written by **Meta Muse Wonder** (`meta/muse-wonder-1.0`).
+Starting from a simple planner, it proposed, coded and tested one change at a time, and a frozen, official scorer decided what
+was kept. It got only the problem statement, a simulator and the scorer: **no papers, no reference code, no web, no published
+scores**. On both problems it beat its starting program, on sealed missions it never saw, for about $28 and under two hours
+per run.
 
-Muse Scientist starts from a simple planner. AI-Scientist-v3 then runs an evolutionary loop in which Muse Wonder, working as
-an OpenCode coding agent, proposes, codes and tests one change at a time. A frozen, official scorer decides what is kept. Muse gets only the problem statement, a
-simulator and the scorer: **no papers, no reference code, no web, no published scores**. The benchmark's own solvers and
-the published agent results are hidden yardsticks, revealed only after the run.
+<sub>Around the model: OpenCode (coding-agent harness), Sakana AI-Scientist-v3 (search loop), AstroAgentBench (problems and official verifier).</sub>
 
 We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/AstroAgentBench)
 ([paper](https://arxiv.org/abs/2601.11354)), and judge every result on **sealed missions** that Muse never saw.
@@ -16,13 +17,24 @@ We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/Ast
 |---|---|---|
 | Task | 20-40 satellites choose which of ~1,700-4,000 photo requests to take in 12 h, without emptying any battery | design the smallest constellation that photographs every place at least every 6 or 8 h for 48 h |
 | Start program | 73.28 (test score) | 67.35 (sealed mean score) |
-| **Muse (blind, 20 attempts)** | **75.40** | **77.07** |
+| **Meta Muse Wonder (blind, 20 attempts)** | **75.40** | **77.07** |
 | Benchmark solver | MWIS 75.95 (still higher) | j2 set cover: Muse wins on 4 of 5 sealed missions |
 | Sealed missions | Muse beats the start on **23 / 23** | **11 / 11** valid (some targets missed on 2) |
 | Other | hard mission: start invalid (3 empty batteries), Muse valid | satellites, 4 dev missions in total: 76 → 57 (solver 70) |
 | Cost of the run | $27.66, 113 min | $29.10, 105 min |
 
 <p align="center"><img src="media/stills/revisit_before_after.png" width="900" alt="Revisit: same coverage with half the satellites"></p>
+
+## What Meta Muse Wonder found
+
+* **Scheduling:** value-per-battery-cost construction, then "bump low-value photos to fit high-value ones", repeated with
+  small random kicks; finally *prices on scarce resources during construction*, an idea worker 2 took from worker 1's
+  shared lesson. Best: 76.63 on dev.
+* **Revisit:** after 4 failed attempts it switched to "quick safe plan first, then improve", **found and fixed a sign error
+  in its own camera-angle check**, then pruned satellites with full re-planning and finally grew the fleet from many orbit
+  families (near-polar orbits). Best: 77.82 on dev with 57 satellites instead of 76.
+* **Safety, not just score:** on the hard scheduling mission the start program drains 3 batteries and its plan is invalid;
+  Muse Wonder's program stays valid.
 
 ## Watch
 
@@ -59,15 +71,6 @@ Details: [docs/astroagentbench.md](docs/astroagentbench.md) (the benchmark and i
 [docs/method.md](docs/method.md) (the search), [docs/problem_aeossp.md](docs/problem_aeossp.md),
 [docs/problem_revisit.md](docs/problem_revisit.md), [docs/results.md](docs/results.md) (all numbers and limits),
 [docs/ideas.md](docs/ideas.md) (all 40 ideas in plain words).
-
-## What Muse found (short version)
-
-* **Scheduling:** value-per-battery-cost construction, then "bump low-value photos to fit high-value ones", repeated with
-  small random kicks; finally *prices on scarce resources during construction*, an idea worker 2 took from worker 1's
-  shared lesson. Best: 76.63 on dev.
-* **Revisit:** after 4 failed attempts it switched to "quick safe plan first, then improve", **found and fixed a sign error
-  in its own camera-angle check**, then pruned satellites with full re-planning and finally grew the fleet from many orbit
-  families (near-polar orbits). Best: 77.82 on dev with 57 satellites instead of 76.
 
 ## Honest limits
 
@@ -108,4 +111,3 @@ Running a new blind search with Muse on Kaggle: see [docs/reproduce.md](docs/rep
 
 Our code: MIT ([LICENSE](LICENSE)). AstroAgentBench (MIT, OpenMOSS-Team) verifier code and mission files; AI-Scientist-v3
 (Apache-2.0, Sakana AI) is downloaded at run time and patched with `runner/patches/meta_provider.patch`. See [NOTICE.md](NOTICE.md).
-Built for Meta's *Push the Frontier* hackathon, with Meta Muse Wonder, OpenCode and AI-Scientist-v3.
