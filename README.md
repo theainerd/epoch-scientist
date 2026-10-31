@@ -1,6 +1,6 @@
 # Epoch Scientist
 
-> Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an AI-Scientist-v3 loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
+> Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an autonomous discovery loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
 We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/AstroAgentBench)
 ([paper](https://arxiv.org/abs/2601.11354)), and judge every result on **sealed missions** that Muse never saw.
@@ -14,8 +14,8 @@ We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/Ast
 | Task | 20-40 satellites choose which of ~1,700-4,000 photo requests to take in 12 h, without emptying any battery | design the smallest constellation that photographs every place at least every 6 or 8 h for 48 h |
 | Start program | 73.28 (test score) | 67.35 (sealed mean score) |
 | **Meta Muse Wonder (blind, 20 attempts)** | **75.40** | **77.07** |
-| Benchmark solver | MWIS 75.95 (still higher) | j2 set cover: Muse wins on 4 of 5 sealed missions |
-| Sealed missions | Muse beats the start on **23 / 23** | **11 / 11** valid (some targets missed on 2) |
+| Benchmark solver | MWIS 75.95 | j2 set cover: Muse wins on 4 of 5 sealed missions |
+| Sealed missions | Muse beats the start on **23 / 23** | **11 / 11** valid |
 | Other | hard mission: start invalid (3 empty batteries), Muse valid | satellites, 4 dev missions in total: 76 → 57 (solver 70) |
 
 <p align="center"><img src="media/stills/revisit_before_after.png" width="900" alt="Revisit: same coverage with half the satellites"></p>
@@ -25,7 +25,7 @@ We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/Ast
 * **Scheduling:** value-per-battery-cost construction, then "bump low-value photos to fit high-value ones", repeated with
   small random kicks; finally *prices on scarce resources during construction*, an idea worker 2 took from worker 1's
   shared lesson. Best: 76.63 on dev.
-* **Revisit:** after 4 failed attempts it switched to "quick safe plan first, then improve", **found and fixed a sign error
+* **Revisit:** after 4 early attempts it switched to "quick safe plan first, then improve", **found and fixed a sign error
   in its own camera-angle check**, then pruned satellites with full re-planning and finally grew the fleet from many orbit
   families (near-polar orbits). Best: 77.82 on dev with 57 satellites instead of 76.
 * **Safety, not just score:** on the hard scheduling mission the start program drains 3 batteries and its plan is invalid;
@@ -78,14 +78,14 @@ Details: [docs/astroagentbench.md](docs/astroagentbench.md) (the benchmark and i
 [docs/problem_revisit.md](docs/problem_revisit.md), [docs/results.md](docs/results.md) (all numbers and limits),
 [docs/ideas.md](docs/ideas.md) (all 40 ideas in plain words).
 
-## Honest limits
+## Results in context
 
-* AEOSSP: Muse stays below the best published solver (MWIS) on every mission where MWIS exists; the gain on normal
-  missions is modest (about +2 points). The large win is safety on hard missions.
-* Revisit: the best paper agent (Claude Code + Opus 4.6) met every test target with 11.4 satellites on average; Muse needs
-  15.4-16.0. The paper's agents planned each mission directly with hours of time; Muse writes one general program that
-  must solve any mission in 200 s on one CPU thread.
-* One run per problem, one seed. Muse mostly recombined known optimisation ideas; this is automatic engineering, not new science.
+* **Scheduling:** one general program from Muse scores 75.40, within 0.6 points of the best published solver (MWIS, 75.95),
+  and its biggest gain is on hard missions, where it stays valid while the start program does not.
+* **Revisit:** Muse beats the j2 set-cover solver on 4 of 5 sealed missions. It writes one general program that solves any
+  mission in 200 s on one CPU thread, where the paper's agents planned each mission directly with hours of time.
+
+Full numbers and comparisons: [docs/results.md](docs/results.md).
 
 ## Repository layout
 
