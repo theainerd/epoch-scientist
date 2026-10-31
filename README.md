@@ -2,107 +2,77 @@
 
 > Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an autonomous discovery loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
-We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/AstroAgentBench)
-([paper](https://arxiv.org/abs/2601.11354)), and judge every result on **sealed missions** that Muse never saw.
-
-<p align="center"><img src="assets/astroagentbench_overview.png" width="760" alt="AstroAgentBench: problem setup, agent planning, external evaluation"></p>
-
-<sub>AstroAgentBench: the agent gets the case files and tools, plans, and an independent verifier scores the plan. For more details, see the [paper](https://arxiv.org/abs/2601.11354).</sub>
-
-| | Earth-observation scheduling (AEOSSP) | Revisit constellation design |
-|---|---|---|
-| Task | 20-40 satellites choose which of ~1,700-4,000 photo requests to take in 12 h, without emptying any battery | design the smallest constellation that photographs every place at least every 6 or 8 h for 48 h |
-| Start program | 73.28 (test score) | 67.35 (sealed mean score) |
-| **Meta Muse Wonder (blind, 20 attempts)** | **75.40** | **77.07** |
-| Benchmark solver | MWIS 75.95 | j2 set cover: Muse wins on 4 of 5 sealed missions |
-| Sealed missions | Muse beats the start on **23 / 23** | **11 / 11** valid |
-| Other | hard mission: start invalid (3 empty batteries), Muse valid | satellites, 4 dev missions in total: 76 → 57 (solver 70) |
-
 <p align="center"><img src="media/stills/revisit_before_after.png" width="900" alt="Revisit: same coverage with half the satellites"></p>
 
-## What Meta Muse Wonder found
+## What we claim
 
-* **Scheduling:** value-per-battery-cost construction, then "bump low-value photos to fit high-value ones", repeated with
-  small random kicks; finally *prices on scarce resources during construction*, an idea worker 2 took from worker 1's
-  shared lesson. Best: 76.63 on dev.
-* **Revisit:** after 4 early attempts it switched to "quick safe plan first, then improve", **found and fixed a sign error
-  in its own camera-angle check**, then pruned satellites with full re-planning and finally grew the fleet from many orbit
-  families (near-polar orbits). Best: 77.82 on dev with 57 satellites instead of 76.
-* **Safety, not just score:** on the hard scheduling mission the start program drains 3 batteries and its plan is invalid;
-  Muse Wonder's program stays valid.
+Every row uses one metric on one fixed set of missions Muse never saw during the search.
 
-## Watch
+| Problem, missions, metric | Start program | **Meta Muse Wonder** | Expert solver |
+|---|---|---|---|
+| Satellite photo scheduling (AEOSSP): 5 test missions, mean score | 73.28 | **75.40** | MWIS 75.95, MILP 76.43 |
+| Constellation design (Revisit): 5 sealed missions, mean score | 69.04 | **78.54** | j2 set cover 72.17 |
+| Revisit: same 5 missions, mean satellites | 19.6 | **14.4** | j2 set cover 18.0 |
 
-| Video | What it shows |
-|---|---|
-| [media/video/search_revisit.mp4](media/video/search_revisit.mp4) | how Muse searches: the 5-step evolutionary loop, then a replay of the real run (20 ideas, 2 workers) |
-| [media/video/revisit_before_after.mp4](media/video/revisit_before_after.mp4) | sealed mission: 20 → 10 satellites, every place on time (score 67.7 → 85.8) |
-| [media/video/aeossp_before_after.mp4](media/video/aeossp_before_after.mp4) | hard sealed mission: the start empties 3 batteries (plan invalid, score 0); Muse stays valid (77.9) |
-| [media/video/search_aeossp.mp4](media/video/search_aeossp.mp4) | the search replay for the scheduling problem, including an idea passed from worker 1 to worker 2 |
+1. **Muse beat the expert constellation solver.** It scored higher on 4 of 5 sealed missions, with 20% fewer satellites.
+2. **Muse closed 67% of the gap to the best-known schedule.** That is the gap from the start program to the MILP reference on
+   the test missions. It also beat the start program on **23 of 23** sealed missions, and its plans stayed valid on all 6
+   where the start plan was invalid.
+3. **Muse debugged its own science.** On Revisit, it traced a score of 0 to a sign error in its own camera-angle check, fixed it,
+   and went on to its best design. It named its best ideas itself: "Geometry-Diverse Constructive Growth" and
+   "Contention-Priced Construction With Protected Iterated Ejection".
 
-## Run logs (Weights & Biases)
+## What we do not claim
 
-Both blind runs were tracked live in W&B (finished runs only):
-
-| Problem | Run | Result |
-|---|---|---|
-| Satellite photo scheduling (AEOSSP) | [aeossp-blind-muse-wonder-1.0-1030-0829](https://wandb.ai/surya-ws2/aisci-aeossp/runs/bcw9vydb) | best dev 76.63, 20 programs scored |
-| Constellation design (Revisit) | [revisit-blind-muse-wonder-1.0-1030-1632](https://wandb.ai/surya-ws2/aisci-revisit/runs/z3vvh4ce) | best dev 77.82, 20 programs scored |
+* **Not the best on every problem.** MWIS scores above Muse on all 8 AEOSSP missions where it ran.
+* **Not the fewest satellites.** On the 5 Revisit test missions, the best published agent uses 11.4 satellites and Muse uses 16.0.
+  This is not like-for-like: those agents planned each mission directly with hours of time, while Muse writes one general
+  program that solves any mission in 200 s on one CPU thread.
+* **Not every target on every mission.** All 11 sealed Revisit plans are valid; 9 meet every target, and 2 miss some.
+* **Not an expert comparison on the hard missions.** No expert solver ran on the 6 AEOSSP missions where the start plan is
+  invalid, so that gain is against our own start program.
+* **Not one-of-a-kind discovery.** Each problem had one run and one seed. Blind means no look-ups, not an untrained model, and
+  Muse mostly recombined known optimisation methods.
 
 ## How it works
 
 <p align="center"><img src="assets/discovery_loop.png" width="900" alt="What Meta Muse Wonder gets, the autonomous discovery loop, and the sealed evaluation"></p>
 
-* **Blind task packs** (`tasks/`): a plain-language problem statement, a physics helper library (`sim.py`), the official
-  AstroAgentBench verifier flattened into one frozen file, an evaluator with fixed time limits and SHA-256 integrity checks,
-  and a deliberately simple starting program.
-* **Search** (`runner/`): **Meta Muse Wonder** (`meta/muse-wonder-1.0`) is the intelligence layer that drives all the reasoning: it
-  proposes each idea, writes and fixes the code, and learns from the scores. The harness around it only runs its steps, on a Kaggle CPU
-  notebook with web tools disabled. Each worker keeps its own best valid program as the parent; all workers share lessons.
-* **Judging** (`analysis/`, `yardsticks/`): the best program is re-scored on sealed missions and compared with the
-  benchmark's reference solvers, an exact MILP (AEOSSP) and the published agent results.
+**Meta Muse Wonder** (`meta/muse-wonder-1.0`) is the intelligence layer that drives all the reasoning: it proposes each idea,
+writes and fixes the code, and learns from the scores. The locked scorer decides what is kept. Details:
+[method](docs/method.md), [all 40 ideas](docs/ideas.md), [all results](docs/results.md).
 
-Details: [docs/astroagentbench.md](docs/astroagentbench.md) (the benchmark and its simulation),
-[docs/method.md](docs/method.md) (the search), [docs/problem_aeossp.md](docs/problem_aeossp.md),
-[docs/problem_revisit.md](docs/problem_revisit.md), [docs/results.md](docs/results.md) (all numbers and limits),
-[docs/ideas.md](docs/ideas.md) (all 40 ideas in plain words).
+Run logs (Weights & Biases):
+[AEOSSP](https://wandb.ai/surya-ws2/aisci-aeossp/runs/bcw9vydb) and
+[Revisit](https://wandb.ai/surya-ws2/aisci-revisit/runs/z3vvh4ce).
 
-## Results in context
+## The benchmark
 
-* **Scheduling:** one general program from Muse scores 75.40, within 0.6 points of the best published solver (MWIS, 75.95),
-  and its biggest gain is on hard missions, where it stays valid while the start program does not.
-* **Revisit:** Muse beats the j2 set-cover solver on 4 of 5 sealed missions. It writes one general program that solves any
-  mission in 200 s on one CPU thread, where the paper's agents planned each mission directly with hours of time.
+[AstroAgentBench](https://github.com/Mtrya/AstroAgentBench) gives an agent the mission files and tools, then an independent
+verifier scores its plan. We use two of its problems: [AEOSSP](docs/problem_aeossp.md) and
+[Revisit](docs/problem_revisit.md). For more details, see the [paper](https://arxiv.org/abs/2601.11354) and
+[our notes](docs/astroagentbench.md).
 
-Full numbers and comparisons: [docs/results.md](docs/results.md).
+<p align="center"><img src="assets/astroagentbench_overview.png" width="700" alt="AstroAgentBench: problem setup, agent planning, external evaluation"></p>
 
-## Repository layout
-
-```
-tasks/        blind task packs given to Muse (aeossp/, revisit/): task.md, sim.py, evaluate.py, frozen verifier, program_0
-runner/       Kaggle runner for AI-Scientist-v3 + OpenCode + Meta Muse; patches/meta_provider.patch (Apache-2.0)
-data/         data operations: fetch AstroAgentBench, build world packs, re-flatten + identity-check verifiers, build Kaggle datasets
-yardsticks/   hidden yardsticks: reference solvers, MILP bound, paper score, Walker sweep
-analysis/     sealed evaluation, run-record extraction, paper-style metrics
-results/      tables (summary.csv, per mission, ideas), best programs, run records (attempts, memory, shared lessons)
-viz/          video renderers and replay exporters (all numbers from the verifier)
-media/        videos and stills;  docs/  method, problems, results, ideas;  assets/  logos
-```
-
-## Quick start
+## Verify it
 
 ```bash
 conda env create -f environment.yml && conda activate epoch-scientist
-make fetch              # AstroAgentBench -> external/AstroAgentBench (MIT)
-make check-verifiers    # frozen verifiers are byte-identical to the official code
-make smoke              # starting programs reproduce their dev scores; best programs score one sealed mission
-make sealed-revisit     # full sealed evaluation of the Revisit best program (~10 min)
-make pack-aeossp        # build AEOSSP world packs (all splits), then: make sealed-aeossp
+make fetch              # download AstroAgentBench (MIT) into external/
+make check-verifiers    # frozen scorers are byte-identical to the official code
+make smoke              # reproduces the Revisit start and best scores exactly
 ```
 
-Running a new blind search with Muse on Kaggle: see [docs/reproduce.md](docs/reproduce.md).
+Full sealed evaluation and a new blind search: [docs/reproduce.md](docs/reproduce.md).
+
+## Watch
+
+* [Sealed Revisit mission](media/video/revisit_before_after.mp4): 20 → 10 satellites, every place on time.
+* [Hard AEOSSP mission](media/video/aeossp_before_after.mp4): the start empties 3 batteries; Muse stays valid.
+* [How Muse searches](media/video/search_revisit.mp4): a replay of the real run.
 
 ## Credits and licence
 
-Our code: MIT ([LICENSE](LICENSE)). AstroAgentBench (MIT, OpenMOSS-Team) verifier code and mission files; AI-Scientist-v3
-(Apache-2.0, Sakana AI) is downloaded at run time and patched with `runner/patches/meta_provider.patch`. See [NOTICE.md](NOTICE.md).
+Our code: MIT ([LICENSE](LICENSE)). AstroAgentBench (MIT, OpenMOSS-Team) supplies the verifier code and mission files. The runner
+uses OpenCode and AI-Scientist-v3 (Apache-2.0, Sakana AI), patched with `runner/patches/meta_provider.patch`. See [NOTICE.md](NOTICE.md).
