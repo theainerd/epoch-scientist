@@ -1,6 +1,6 @@
-# Muse Scientist
+# Epoch Scientist
 
-> Muse gets only the problem, a simulator and a fixed score. With no internet, no papers and no reference code, it runs its own experiments from a simple baseline. Then we reveal the hidden expert solvers.
+Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an AI-Scientist-v3 loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
 **Meta Muse Wonder as an AI scientist: it improves satellite mission planners on its own.**
 
