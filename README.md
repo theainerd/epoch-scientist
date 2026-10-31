@@ -2,7 +2,7 @@
 
 > Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an autonomous discovery loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
-<p align="center"><img src="media/stills/revisit_before_after.png" width="900" alt="Revisit: same coverage with half the satellites"></p>
+<p align="center"><a href="media/video/revisit_before_after.mp4"><img src="media/video/revisit_before_after.gif" width="900" alt="Revisit replay: before and after on a sealed mission, every 8-hour deadline met with half the satellites"></a></p>
 
 ## What we claim
 
