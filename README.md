@@ -7,8 +7,7 @@
 Every idea, every line of code and every fix in this repository was written by **Meta Muse Wonder** (`meta/muse-wonder-1.0`).
 Starting from a simple planner, it proposed, coded and tested one change at a time, and a frozen, official scorer decided what
 was kept. It got only the problem statement, a simulator and the scorer: **no papers, no reference code, no web, no published
-scores**. On both problems it beat its starting program, on sealed missions it never saw, for about $28 and under two hours
-per run.
+scores**. On both problems it beat its starting program, on sealed missions it never saw.
 
 <sub>Around the model: OpenCode (coding-agent harness), Sakana AI-Scientist-v3 (search loop), AstroAgentBench (problems and official verifier).</sub>
 
@@ -23,7 +22,6 @@ We test this on two problems from [AstroAgentBench](https://github.com/Mtrya/Ast
 | Benchmark solver | MWIS 75.95 (still higher) | j2 set cover: Muse wins on 4 of 5 sealed missions |
 | Sealed missions | Muse beats the start on **23 / 23** | **11 / 11** valid (some targets missed on 2) |
 | Other | hard mission: start invalid (3 empty batteries), Muse valid | satellites, 4 dev missions in total: 76 → 57 (solver 70) |
-| Cost of the run | $27.66, 113 min | $29.10, 105 min |
 
 <p align="center"><img src="media/stills/revisit_before_after.png" width="900" alt="Revisit: same coverage with half the satellites"></p>
 
@@ -74,7 +72,7 @@ flowchart LR
   and a deliberately simple starting program.
 * **Search** (`runner/`): AI-Scientist-v3 drives the loop; each step is an OpenCode agent session running `meta/muse-wonder-1.0`
   through a Meta provider patch, on a Kaggle CPU notebook,
-  web tools disabled, budget guard. Each worker keeps its own best valid program as the parent; all workers share lessons.
+  web tools disabled. Each worker keeps its own best valid program as the parent; all workers share lessons.
 * **Judging** (`analysis/`, `yardsticks/`): the best program is re-scored on sealed missions and compared with the
   benchmark's reference solvers, an exact MILP (AEOSSP) and the published agent results.
 
