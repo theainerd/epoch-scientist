@@ -1,0 +1,4 @@
+numpy
+scipy
+pyyaml
+brahe==1.8.0

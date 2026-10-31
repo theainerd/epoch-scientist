@@ -1,0 +1,9 @@
+{
+  "combined_score": 76.6287156880977,
+  "correct": true,
+  "entrypoint_path": "src/program.py",
+  "parallel_worker_index": 2,
+  "program_dir": "/kaggle/tmp/AI-Scientist-v3-main/results/aeossp/opencode/20261030_082928/investigation/worker_02/ideas/08_contention_priced_construction_with_protected_iterated_ejection/program_1",
+  "source_attempt_id": "c08_contention_priced_construction_protected_ejection_attempt_01",
+  "updated_at": "2026-10-30T10:14:42.551909+00:00"
+}

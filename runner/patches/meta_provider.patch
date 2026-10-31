@@ -1,0 +1,94 @@
+diff -ruN fa/configs/opencode/README.md fb/configs/opencode/README.md
+--- fa/configs/opencode/README.md	1970-01-01 05:30:00
++++ fb/configs/opencode/README.md	2026-10-27 12:12:23
+@@ -0,0 +1,7 @@
++# Meta Model API with OpenCode
++
++1. Copy `opencode.meta.json` to `~/.config/opencode/opencode.json`.
++2. Export `MODEL_API_KEY` (never commit it).
++3. Run with `agent.name=opencode agent.model=meta/muse-spark-1.3` (or `meta/muse-wonder-1.0`).
++
++The `*meta*|*muse*` model hint in `src/scripts/lib/container_agent.sh` forwards only `MODEL_API_KEY` into containers.
+diff -ruN fa/configs/opencode/opencode.meta.json fb/configs/opencode/opencode.meta.json
+--- fa/configs/opencode/opencode.meta.json	1970-01-01 05:30:00
++++ fb/configs/opencode/opencode.meta.json	2026-10-27 12:12:23
+@@ -0,0 +1,21 @@
++{
++  "$schema": "https://opencode.ai/config.json",
++  "provider": {
++    "meta": {
++      "npm": "@ai-sdk/openai",
++      "name": "Meta Model API",
++      "options": {
++        "baseURL": "https://api.meta.ai/v1",
++        "apiKey": "{env:MODEL_API_KEY}"
++      },
++      "models": {
++        "muse-spark-1.3": {
++          "name": "Muse Spark 1.3"
++        },
++        "muse-wonder-1.0": {
++          "name": "Muse Wonder 1.0"
++        }
++      }
++    }
++  }
++}
+\ No newline at end of file
+diff -ruN fa/src/investigation/script_runners.py fb/src/investigation/script_runners.py
+--- fa/src/investigation/script_runners.py	2026-10-27 12:12:20
++++ fb/src/investigation/script_runners.py	2026-10-27 13:43:05
+@@ -1170,12 +1170,20 @@
+     if agent == "gemini" and reasoning_effort:
+         raise ValueError("reasoning_effort is not supported for gemini")
+     cmd = ["env", "HEADLESS_MODELS_DEV_CACHE="]
+-    cmd.extend(
+-        [
++    headless_bin = os.environ.get("HEADLESS_BIN", "").strip()
++    headless_cmd = (
++        [headless_bin]
++        if headless_bin
++        else [
+             "npx",
+             "-y",
+             "git+https://github.com/RobertTLange/headless-cli.git#"
+             "93cd9b06b85f848af1308c41e018991b33907c5e",
++        ]
++    )
++    cmd.extend(
++        [
++            *headless_cmd,
+             agent,
+             "--debug",
+             "--usage",
+diff -ruN fa/src/scripts/lib/container_agent.sh fb/src/scripts/lib/container_agent.sh
+--- fa/src/scripts/lib/container_agent.sh	2026-10-27 12:12:20
++++ fb/src/scripts/lib/container_agent.sh	2026-10-27 12:12:23
+@@ -219,6 +219,7 @@
+           *anthropic*|*claude*) selected_provider="anthropic" ;;
+           *google*|*gemini*) selected_provider="google" ;;
+           *moonshot*) selected_provider="moonshot" ;;
++          *meta*|*muse*) selected_provider="meta" ;;
+           *openai*|*gpt-*) selected_provider="openai" ;;
+         esac
+         [ -z "$selected_provider" ] || break
+@@ -233,6 +234,7 @@
+         anthropic) allowed_keys+=" ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN" ;;
+         google) allowed_keys+=" GEMINI_API_KEY GOOGLE_API_KEY" ;;
+         moonshot) allowed_keys+=" MOONSHOT_API_KEY" ;;
++        meta) allowed_keys+=" MODEL_API_KEY" ;;
+         bedrock)
+           allowed_keys+=" AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_BEARER_TOKEN_BEDROCK AWS_REGION AWS_DEFAULT_REGION AWS_REGION_NAME"
+           ;;
+diff -ruN fa/src/scripts/variant_agent.sh fb/src/scripts/variant_agent.sh
+--- fa/src/scripts/variant_agent.sh	2026-10-27 12:12:20
++++ fb/src/scripts/variant_agent.sh	2026-10-27 12:12:23
+@@ -38,7 +38,7 @@
+ CONTAINER_NETWORK="bridge"
+ CONTAINER_AUTH_ROOT="$HOME"
+ CONTAINER_ENV_FILE=""
+-VARIANT_AGENT_ALLOWED_ENV_KEYS="ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_BEARER_TOKEN_BEDROCK AWS_REGION AWS_DEFAULT_REGION AWS_REGION_NAME CLAUDE_CODE_OAUTH_TOKEN CLAUDE_CODE_USE_BEDROCK CURSOR_API_KEY DEEPSEEK_API_KEY GEMINI_API_KEY GOOGLE_API_KEY MOONSHOT_API_KEY OPENAI_API_KEY OPENROUTER_API_KEY PI_CODING_AGENT_PROVIDER PI_CODING_AGENT_MODEL PI_CODING_AGENT_MODELS S2_API_KEY"
++VARIANT_AGENT_ALLOWED_ENV_KEYS="ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN AWS_BEARER_TOKEN_BEDROCK AWS_REGION AWS_DEFAULT_REGION AWS_REGION_NAME CLAUDE_CODE_OAUTH_TOKEN CLAUDE_CODE_USE_BEDROCK CURSOR_API_KEY DEEPSEEK_API_KEY GEMINI_API_KEY GOOGLE_API_KEY MODEL_API_KEY MOONSHOT_API_KEY OPENAI_API_KEY OPENROUTER_API_KEY PI_CODING_AGENT_PROVIDER PI_CODING_AGENT_MODEL PI_CODING_AGENT_MODELS S2_API_KEY"
+ POSTHOC_ENV_POLICY=0
+ 
+ while [[ $# -gt 0 ]]; do

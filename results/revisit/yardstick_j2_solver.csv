@@ -1,0 +1,10 @@
+split,case,role,cap,req_h,j2_valid,j2_sats,j2_missing,j2_score
+train,case_0001,dev,16,8.0,True,15,0,72.0
+train,case_0002,dev,20,6.0,True,20,0,70.0
+train,case_0003,dev,20,6.0,True,20,0,70.0
+train,case_0004,dev,20,8.0,True,15,0,77.895
+train,case_0005,sealed,20,6.0,True,20,0,70.0
+train,case_0006,sealed,18,8.0,True,15,0,75.294
+train,case_0007,sealed,20,8.0,True,15,0,77.895
+train,case_0008,sealed,20,6.0,True,20,1,67.667
+train,case_0009,sealed,20,6.0,True,20,0,70.0

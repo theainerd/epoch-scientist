@@ -1,0 +1,9 @@
+{
+  "combined_score": 77.8157894736842,
+  "correct": true,
+  "entrypoint_path": "src/program.py",
+  "parallel_worker_index": 2,
+  "program_dir": "/kaggle/tmp/AI-Scientist-v3-main/results/revisit/opencode/20261030_163231/investigation/worker_02/ideas/10_geometry_diverse_constructive_growth_for_six_hour_revisit_compression/program_1",
+  "source_attempt_id": "cycle_10_geometry_diverse_constructive_growth_for_six_hour_revisit_compression_attempt_01",
+  "updated_at": "2026-10-30T18:09:36.707915+00:00"
+}

@@ -1,0 +1,21 @@
+worker,cycle,title,status,harness_score,best_updated,sats,missing,max_solve_s,program
+1,1,Deadline-Driven Fleet Pruning with Coverage-Optimized Walker Constellations,fail,0.0,False,-/14/14/20,-/26/31/26,186.01,worker_01/ideas/01_deadline_driven_fleet_pruning_with_coverage_optimized_walker_constellations/program_1
+1,2,Cap-First Deadline Scheduling with Cheap Visibility-Based Pruning,fail,20.004,True,11/20/20/20,0/26/31/26,180.49,worker_01/ideas/02_cap_first_deadline_scheduling_with_cheap_visibility_based_pruning/program_1
+1,3,"Baseline-First Cheap Seed, Then Deadline-Aware Improvement",pass,75.447,True,13/18/17/15,0/0/0/0,10.62,worker_01/ideas/03_baseline_first_cheap_seed_then_deadline_aware_improvement/program_1
+1,4,Reschedule-Aware Deep Pruning on a Guaranteed Cheap Seed,fail,77.026,True,13/16/16/14,0/0/0/0,14.98,worker_01/ideas/04_reschedule_aware_deep_pruning_on_a_guaranteed_cheap_seed/program_1
+1,5,Lookahead Repair Scheduler with Beam-Search Fleet Minimisation,fail,38.974,False,12/-/-/15,0/-/-/0,34.79,worker_01/ideas/05_lookahead_repair_scheduler_with_beam_search_fleet_minimisation/program_1
+1,6,Slew-Audited Bottleneck Rescheduler on a Guaranteed Cheap Seed,fail,77.026,False,13/16/16/14,0/0/0/0,20.23,worker_01/ideas/06_slew_audited_bottleneck_rescheduler_on_a_guaranteed_cheap_seed/program_1
+1,7,Diverse-Phase Cached Pool with Seed-First Fleet Pruning,fail,77.026,False,13/16/16/14,0/0/0/0,32.17,worker_01/ideas/07_diverse_phase_cached_pool_with_seed_first_fleet_pruning/program_1
+1,8,Union-Pool Constructive Fleet Minimisation with Joint Compression Swaps,fail,77.421,True,13/16/16/13,0/0/0/0,54.98,worker_01/ideas/08_union_pool_constructive_fleet_minimisation_with_joint_compression_swaps/program_1
+1,9,Window-Time Optimised Scheduler for Tight-Revisit Fleet Compression,fail,77.421,False,13/16/16/13,0/0/0/0,50.28,worker_01/ideas/09_window_time_optimised_scheduler_for_tight_revisit_fleet_compression/program_1
+1,10,Walker Topology Redesign for Tight Six-Hour Revisit,fail,77.421,False,13/16/16/13,0/0/0/0,46.82,worker_01/ideas/10_walker_topology_redesign_for_tight_six_hour_revisit/program_1
+2,1,Targeted Coverage-Greedy Constellation Minimization,fail,45.132,False,6/12/-/7,0/26/-/0,194.59,worker_02/ideas/01_targeted_coverage_greedy_constellation_minimization/program_1
+2,2,Runtime-First Lean Constellation with Guaranteed Fallback Return,fail,0.0,True,16/20/20/20,25/26/31/26,27.37,worker_02/ideas/02_runtime_first_lean_constellation_with_guaranteed_fallback_return/program_1
+2,3,Geometry-Verified Lean Greedy with Non-Empty Fallback,fail,76.632,True,13/18/17/12,0/0/0/0,148.36,worker_02/ideas/03_geometry_verified_lean_greedy_with_non_empty_fallback/program_1
+2,4,Targeted Pool Greedy to Cut Loose Fleets While Keeping Tight Feasibility,fail,76.632,False,13/18/17/12,0/0/0/0,135.65,worker_02/ideas/04_targeted_pool_greedy_to_cut_loose_fleets_while_keeping_tight_feasibility/program_1
+2,5,Scheduler-Aware Gap-Critical Rescheduling with Local Repair,fail,76.632,False,13/17/16/14,0/0/0/0,154.06,worker_02/ideas/05_scheduler_aware_gap_critical_rescheduling_with_local_repair/program_1
+2,6,Fast-Only Margin-Verified Fleet Pruning with Phase-Diverse Walker Pool,fail,73.474,False,13/20/20/15,0/0/0/0,111.91,worker_02/ideas/06_fast_only_margin_verified_fleet_pruning_with_phase_diverse_walker_pool/program_1
+2,7,Incremental Regret-Guided Pruning with Requirement-Exact Cached Scheduling,fail,75.842,False,13/18/18/13,0/0/0/0,102.62,worker_02/ideas/07_incremental_regret_guided_pruning_with_requirement_exact_cached_scheduling/program_1
+2,8,Joint Pair-Replacement Fleet Reduction with Full-Cap Walker Variants,fail,76.632,False,13/18/17/12,0/0/0/0,98.93,worker_02/ideas/08_joint_pair_replacement_fleet_reduction_with_full_cap_walker_variants/program_1
+2,9,Window-Flexible Slew-Aware Scheduling to Break the Tight Fleet Plateau,fail,77.026,True,13/17/17/12,0/0/0/0,28.03,worker_02/ideas/09_window_flexible_slew_aware_scheduling_to_break_the_tight_fleet_plateau/program_1
+2,10,Geometry-Diverse Constructive Growth for Six-Hour Revisit Compression,fail,77.816,True,13/17/17/10,0/0/0/0,65.98,worker_02/ideas/10_geometry_diverse_constructive_growth_for_six_hour_revisit_compression/program_1

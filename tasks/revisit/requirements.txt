@@ -1,0 +1,3 @@
+numpy
+scipy
+brahe==1.8.0

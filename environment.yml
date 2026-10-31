@@ -1,0 +1,16 @@
+name: muse-scientist
+channels: [conda-forge]
+dependencies:
+  - python=3.12
+  - numpy
+  - scipy
+  - pyyaml
+  - pandas
+  - matplotlib
+  - ffmpeg
+  - pip
+  - pip:
+      - brahe==1.8.0
+      - shapely
+      - pyproj
+      - skyfield

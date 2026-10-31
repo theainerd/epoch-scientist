@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "Muse Scientist: an AI scientist that improves satellite mission planners on AstroAgentBench"
+message: "If you use this work, please cite it and the AstroAgentBench paper."
+authors:
+  - name: "Epoch Discovery"
+date-released: 2026-11-04
+license: MIT
+references:
+  - type: article
+    title: "AstroAgentBench: Evaluating Agentic Planning on Space Mission Planning Tasks"
+    url: "https://arxiv.org/abs/2601.11354"

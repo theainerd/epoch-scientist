@@ -1,0 +1,3 @@
+### From worker_01
+
+Retain battery-safe slew-feasible insertion with incremental battery checks and a sim.check fallback, since it consistently yields valid plans within the time limit. Prefer contention pricing inside construction over further post-hoc ejection, segment, relocation, or boundary-DP rounds, which have plateaued or regressed; Lagrangian duplicate, time-bin, and battery prices can raise weighted completion and lift the weakest mission. Guard every priced or DP move with latency discipline, because weight- and count-driven selection readily trades away turnaround time, and accept only exact whole-plan improvements that protect completion as well as weighted completion.

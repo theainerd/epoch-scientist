@@ -1,0 +1,10 @@
+problem,set,metric,start_program,muse_best,benchmark_solver,notes
+aeossp,dev (train 1-7),mean N,74.926,76.63,MWIS 77.40 / greedy_lns 72.90,Kaggle evaluation; MILP best known 77.79; Muse closed 59% of start->MILP gap
+aeossp,test (5 missions),mean N,73.28,75.40,MWIS 75.95 / greedy_lns 71.63,MILP 76.43; paper best agent Codex+GPT-5.4 72.91 (agents computed geometry themselves)
+aeossp,test (5 missions),mean WCR,0.703,0.740,MWIS 0.758,MILP 0.767
+aeossp,23 sealed missions,missions where Muse beats start,,23/23,,mean +1.99 N where both valid (min +1.44)
+aeossp,test_hard case_0001,N (valid?),0 (invalid: 3 batteries empty),77.92 (valid),,Muse lowest battery 15.74 Wh
+revisit,dev (train 1-4),mean score,69.82,77.82,j2_rgt_set_cover 72.47,satellites 76 -> 57 (solver 70)
+revisit,11 sealed missions,mean score,67.35,77.07,,Muse valid 11/11; misses some targets on 2 of 11
+revisit,sealed train 5-9,mean score,,78.54,j2_rgt_set_cover 72.17,Muse better on 4 of 5
+revisit,test (5 missions),paper metric G (h) / satellites,8.494 / 19.8,6.807 / 16.0,Ref1 6.80 / 17.2,G = 6.80 means every target met; paper best agent Claude Code+Opus 4.6 6.80 / 11.4; Muse runner-up 6.80 / 15.4

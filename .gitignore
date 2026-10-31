@@ -1,0 +1,11 @@
+work/
+external/
+__pycache__/
+*.pyc
+.DS_Store
+*_output_.zip
+results.tar.gz
+metrics.json
+correct.json
+stdout.log
+stderr.log

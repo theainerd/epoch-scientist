@@ -1,0 +1,12 @@
+[
+ {
+  "id": "contract_respected",
+  "description": "program.py defines solve(world, time_limit_s), uses only world/sim/numpy/scipy/brahe/stdlib, returns within 200 s per mission, and leaves evaluate.py, capture.py, sim.py and revisit_verifier.py unchanged",
+  "type": "implementation"
+ },
+ {
+  "id": "score_above_baseline",
+  "description": "combined_score is above the program_0 score",
+  "type": "metric"
+ }
+]
