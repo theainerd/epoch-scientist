@@ -1,0 +1,1 @@
+solution_generated: case_0005 candidates=60961 inserted=2820 ls_accepted=8 ls_stop=local_minimum after_repair=2780 local_valid=True repair_removals=44 -> work/yardsticks/aeossp_standard/greedy_lns/test_hard/case_0005/solution.json

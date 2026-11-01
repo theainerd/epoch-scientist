@@ -27,4 +27,5 @@ mission (test_hard case_0001: 40 satellites, 3,995 requests) the start empties t
 13:54:25 UTC) and scores 0; Muse's plan is valid (N 77.92, lowest battery 15.74 Wh, WCR 0.830, 3,311 photos).
 
 Caveats: the paper's agents had to compute geometry themselves (our packs pre-compute it); Muse's program has a 60 s limit
-while MWIS is unlimited; Muse is below MWIS on all 8 missions where MWIS exists.
+while MWIS is unlimited; Muse is below MWIS on all 13 sealed missions where MWIS was run
+(8 test and train missions, 5 hard missions).

@@ -1,0 +1,36 @@
+{
+ "task": {
+  "value": "aeossp_blind"
+ },
+ "model": {
+  "value": "meta/muse-wonder-1.0"
+ },
+ "_wandb": {
+  "value": {
+   "m": [],
+   "t": {
+    "3": [
+     2,
+     13,
+     16,
+     62
+    ],
+    "4": "3.13.15",
+    "5": "0.28.1",
+    "8": [
+     2
+    ],
+    "12": "0.28.1",
+    "13": "linux-x86_64"
+   },
+   "cli_version": "0.28.1",
+   "python_version": "3.13.15"
+  }
+ },
+ "cycles": {
+  "value": 20
+ },
+ "workers": {
+  "value": 2
+ }
+}

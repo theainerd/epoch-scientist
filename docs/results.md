@@ -1,7 +1,9 @@
 # Results and limits
 
 All numbers come from the frozen official verifiers. Tables: `results/summary.csv`, `results/*/sealed_per_mission.csv`,
-`results/*/ideas_table.csv`, yardsticks in `results/aeossp/yardsticks_train.csv` and `results/revisit/yardstick_j2_solver.csv`.
+`results/*/ideas_table.csv`, yardsticks in `results/aeossp/yardsticks_train.csv`, `results/aeossp/hard_missions_yardsticks.csv` and
+`results/revisit/yardstick_j2_solver.csv`; hard-mission solver plans in `results/aeossp/hard_yardsticks_raw/` (re-check with
+`analysis/reverify_hard_yardsticks.py`); code originality in `results/code_originality.csv`; run logs in `results/wandb/`.
 
 | | AEOSSP | Revisit |
 |---|---|---|
@@ -10,7 +12,9 @@ All numbers come from the frozen official verifiers. Tables: `results/summary.cs
 | Failed attempts (crash or unscored) | 0 | 0 |
 | Dev score: start -> Muse | 74.93 -> 76.63 | 69.82 -> 77.82 |
 | Sealed | 23/23 missions better than start | 67.35 -> 77.07 mean (11 missions) |
-| Versus the benchmark solver | below MWIS (75.40 vs 75.95 on test) | above j2 set cover on 4 of 5 sealed missions |
+| Versus the benchmark solver | below MWIS (75.40 vs 75.95 on test; 78.54 vs 79.25 on the 5 hard missions) | above j2 set cover on 4 of 5 sealed missions |
+| Hard missions (5), start invalid | Muse valid on 5/5; MWIS 79.25 and greedy_lns 75.15 also valid on 5/5 | |
+| Code shared with reference solvers | 0.35% (unrelated-problem floor 0.0%) | 0.33% (floor 0.05%) |
 | Versus the paper's best agent | above Codex + GPT-5.4 (75.40 vs 72.91 on test)* | below Claude Code + Opus 4.6 (16.0 vs 11.4 satellites on test)* |
 
 \* not like-for-like: the paper's agents worked per mission with hours of compute and (AEOSSP) computed geometry themselves;

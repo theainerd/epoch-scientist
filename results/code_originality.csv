@@ -1,0 +1,6 @@
+problem,program,lines,overlap_same_problem_solvers,overlap_unrelated_solvers_noise_floor
+aeossp,best (w2 cycle 8),1062,0.0035,0.0
+aeossp,w1 best (cycle 10),1324,0.0026,0.0011
+revisit,best (w2 cycle 10),823,0.0033,0.0005
+revisit,runner-up (w1 cycle 8),829,0.0022,0.0
+revisit,CONTROL: renamed copy of a reference solver,2917,0.9936,

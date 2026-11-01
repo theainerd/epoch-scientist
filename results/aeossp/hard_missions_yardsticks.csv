@@ -1,0 +1,6 @@
+case,start_N,start_valid,muse_N,muse_valid,mwis_N,mwis_valid,greedy_lns_N,greedy_lns_valid
+case_0001,0.0,False,77.924,True,78.342,True,74.481,True
+case_0002,0.0,False,75.642,True,77.104,True,73.037,True
+case_0003,0.0,False,80.793,True,81.347,True,77.396,True
+case_0004,0.0,False,80.879,True,81.319,True,77.295,True
+case_0005,0.0,False,77.448,True,78.153,True,73.564,True
