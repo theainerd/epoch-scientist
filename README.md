@@ -2,10 +2,10 @@
 
 > Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an autonomous discovery loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
-<p align="center"><a href="media/video/revisit_before_after.mp4"><img src="media/video/revisit_before_after.gif" width="900" alt="Revisit replay: before and after on a sealed mission, every 8-hour deadline met with half the satellites"></a></p>
+<p align="center"><a href="media/video/epoch_scientist_explainer.mp4"><img src="media/stills/explainer_poster.jpg" width="900" alt="Epoch Scientist explainer video: planning space missions is hard"></a></p>
 
-<p align="center"><sub>Sealed Revisit mission (train 7): simple start program 20 satellites, one place never photographed ·
-published expert solver (j2 set cover) 15 · <b>Meta Muse Wonder 10</b>, every place photographed on time.</sub></p>
+<p align="center"><sub>▶ <a href="media/video/epoch_scientist_explainer.mp4">Watch the 2-minute explainer</a>: the problem, the discovery loop,
+both results and the limits.</sub></p>
 
 ## What we claim
 
@@ -80,6 +80,7 @@ Full sealed evaluation and a new blind search: [docs/reproduce.md](docs/reproduc
 
 ## Watch
 
+* [2-minute explainer](media/video/epoch_scientist_explainer.mp4): the whole project in one video.
 * [Sealed Revisit mission](media/video/revisit_before_after.mp4): 20 → 10 satellites, every place on time.
 * [Hard AEOSSP mission](media/video/aeossp_before_after.mp4): the start empties 3 batteries; Muse stays valid.
 * [How Muse searches](media/video/search_revisit.mp4): a replay of the real run.
