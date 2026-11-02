@@ -5,7 +5,7 @@
 <p align="center"><a href="media/video/epoch_scientist_explainer.mp4"><img src="media/video/epoch_scientist_explainer.gif" width="900" alt="Highlights of the 2-minute Epoch Scientist explainer: the problem, 20 vs 15 vs 10 satellites, 23 of 23 missions, 67% of the gap"></a></p>
 
 <p align="center"><sub>Sealed Revisit mission: start program 20 satellites · expert solver 15 · <b>Meta Muse Wonder 10</b>, every place on time.<br>
-▶ <a href="media/video/epoch_scientist_explainer.mp4">Watch the full 2-minute explainer</a> (click the preview).</sub></p>
+▶ <a href="media/video/epoch_scientist_explainer.mp4">Watch the full 2-minute explainer</a>, narrated (click the preview).</sub></p>
 
 ## What we claim
 
@@ -80,7 +80,7 @@ Full sealed evaluation and a new blind search: [docs/reproduce.md](docs/reproduc
 
 ## Watch
 
-* [2-minute explainer](media/video/epoch_scientist_explainer.mp4): the whole project in one video.
+* [2-minute explainer](media/video/epoch_scientist_explainer.mp4): the whole project in one narrated video ([captions](media/video/epoch_scientist_explainer.srt)).
 * [Sealed Revisit mission](media/video/revisit_before_after.mp4): 20 → 10 satellites, every place on time.
 * [Hard AEOSSP mission](media/video/aeossp_before_after.mp4): the start empties 3 batteries; Muse stays valid.
 * [How Muse searches](media/video/search_revisit.mp4): a replay of the real run.
