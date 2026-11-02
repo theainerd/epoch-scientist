@@ -2,11 +2,11 @@
 
 > Epoch Scientist tests whether Meta Muse Wonder can do science on its own. Muse works as an autonomous researcher in an autonomous discovery loop on AstroAgentBench satellite problems. It gets only the problem statement, a simulator, a locked scorer and a simple starting program: no internet, no research papers, no expert code. Muse proposes ideas, writes the code, scores it and keeps what works. Afterwards, we test its best program once on sealed missions and compare it with expert solvers that it never saw.
 
-<p align="center"><a href="media/video/epoch_scientist_explainer.mp4"><img src="media/video/epoch_scientist_explainer.gif" width="900" alt="Highlights of the 2-minute Epoch Scientist explainer: the problem, 20 vs 15 vs 10 satellites, 23 of 23 missions, 67% of the gap"></a></p>
+<p align="center"><a href="https://youtu.be/866FbIutjNQ"><img src="media/video/epoch_scientist_explainer.gif" width="900" alt="Highlights of the 2-minute Epoch Scientist explainer: the problem, 20 vs 15 vs 10 satellites, 23 of 23 missions, 67% of the gap"></a></p>
 
 <p align="center"><sub>Sealed Revisit mission: start program 20 satellites · expert solver 15 · <b>Meta Muse Wonder 10</b>, every place on time.<br>
 On 20 fresh missions made after the search, Muse's unchanged program beat the expert solver on <b>18 of 20</b>.<br>
-▶ <a href="media/video/epoch_scientist_explainer.mp4">Watch the full 2-minute explainer</a>, narrated (click the preview).</sub></p>
+▶ <a href="https://youtu.be/866FbIutjNQ">Watch the full 2-minute explainer on YouTube</a>, narrated (click the preview).</sub></p>
 
 ## What we claim
 
@@ -90,7 +90,7 @@ Full sealed evaluation and a new blind search: [docs/reproduce.md](docs/reproduc
 
 ## Watch
 
-* [2-minute explainer](media/video/epoch_scientist_explainer.mp4): the whole project in one narrated video ([captions](media/video/epoch_scientist_explainer.srt)).
+* [2-minute explainer on YouTube](https://youtu.be/866FbIutjNQ): the whole project in one narrated video ([MP4 in the repo](media/video/epoch_scientist_explainer.mp4), [captions](media/video/epoch_scientist_explainer.srt)).
 * [Sealed Revisit mission](media/video/revisit_before_after.mp4): 20 → 10 satellites, every place on time.
 * [Hard AEOSSP mission](media/video/aeossp_before_after.mp4): the start empties 3 batteries; Muse stays valid.
 * [How Muse searches](media/video/search_revisit.mp4): a replay of the real run.
