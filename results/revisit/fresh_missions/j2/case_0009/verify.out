@@ -1,0 +1,159 @@
+{
+  "errors": [],
+  "is_valid": true,
+  "metrics": {
+    "capped_max_revisit_gap_hours": 6.0,
+    "max_revisit_gap_hours": 5.991950729166667,
+    "num_satellites": 20,
+    "target_gap_summary": {
+      "target_001": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_002": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_003": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_004": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_005": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_006": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_007": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_008": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_009": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.991950729166667,
+        "observation_count": 8
+      },
+      "target_010": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_011": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_012": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_013": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_014": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_015": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_016": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_017": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_018": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_019": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_020": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_021": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_022": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_023": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_024": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_025": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_026": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_027": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_028": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      },
+      "target_029": {
+        "expected_revisit_period_hours": 6.0,
+        "max_revisit_gap_hours": 5.983617395833334,
+        "observation_count": 8
+      }
+    },
+    "threshold_violation_count": 0,
+    "worst_target_capped_max_revisit_gap_hours": 6.0
+  },
+  "warnings": []
+}

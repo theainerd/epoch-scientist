@@ -1,0 +1,24 @@
+{
+  "combined_score": 67.0031848606212,
+  "n_valid": 1,
+  "n_cases": 1,
+  "n_cases_all_targets_met": 0,
+  "total_satellites": 20,
+  "max_solve_s": 25.7,
+  "per_case": {
+    "case_0001": {
+      "valid": true,
+      "score": 67.0031848606212,
+      "n_satellites": 20,
+      "cap": 20,
+      "revisit_req_h": 6.0,
+      "n_targets_missing": 3,
+      "worst_gap_h": 21.806,
+      "capped_mean_gap_h": 7.060833333333333,
+      "n_actions": 796,
+      "solve_s": 25.7,
+      "wall_s": 62.7
+    }
+  },
+  "eval_seconds": 62.7
+}

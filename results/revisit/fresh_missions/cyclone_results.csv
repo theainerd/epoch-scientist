@@ -1,0 +1,2 @@
+case,req_h,cap,start_valid,start_score,start_sats,start_missing,muse_valid,muse_score,muse_sats,muse_missing,j2_valid,j2_score,j2_sats,j2_missing
+case_0001,6.0,20,True,67.003,20,3,True,69.592,20,3,True,70.0,20,0

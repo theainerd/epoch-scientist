@@ -1,0 +1,134 @@
+{
+  "errors": [],
+  "is_valid": true,
+  "metrics": {
+    "capped_max_revisit_gap_hours": 8.0,
+    "max_revisit_gap_hours": 7.978156527777777,
+    "num_satellites": 15,
+    "target_gap_summary": {
+      "target_001": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_002": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_003": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_004": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_005": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_006": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 7
+      },
+      "target_007": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_008": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_009": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 7
+      },
+      "target_010": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_011": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 7
+      },
+      "target_012": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_013": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_014": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_015": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_016": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_017": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 7
+      },
+      "target_018": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_019": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_020": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_021": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_022": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_023": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      },
+      "target_024": {
+        "expected_revisit_period_hours": 8.0,
+        "max_revisit_gap_hours": 7.978156527777777,
+        "observation_count": 6
+      }
+    },
+    "threshold_violation_count": 0,
+    "worst_target_capped_max_revisit_gap_hours": 8.0
+  },
+  "warnings": []
+}

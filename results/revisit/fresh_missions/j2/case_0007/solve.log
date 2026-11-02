@@ -1,0 +1,1 @@
+j2_rgt_set_cover templates/candidates/solution: 9 accepted, 21 rejected, 216 candidates, 1579 windows, 485 certified, 5 selected, 20 satellites, 209 actions, pass=one_day, selection_retries=0, workers=1/6/1/profile=custom__one_day_only, local_valid=True
