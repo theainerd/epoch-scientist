@@ -8,6 +8,7 @@ then ran its best program once on held-out missions and compared it with expert 
 > **Built this week (26 Oct – 4 Nov 2026):** all code, task packs, runs, tests and analysis in this repo. It uses open-source
 > tools: AI-Scientist-v3 (Sakana AI), OpenCode and AstroAgentBench.<br>
 > **Meta model:** Meta Muse Wonder (`meta/muse-wonder-1.0`) does every research step.<br>
+> **Open weights:** Muse Spark on Baseten (meta-models/muse-spark-open) ran the same setup on a third problem.<br>
 > **Bonus prize:** Best Agentic Use-Case
 
 <p align="center"><a href="https://youtu.be/866FbIutjNQ"><img src="media/video/epoch_scientist_explainer.gif" width="900" alt="Highlights of the 2-minute Epoch Scientist explainer: the problem, 20 vs 15 vs 10 satellites, 23 of 23 missions, 67% of the gap"></a></p>
@@ -46,6 +47,8 @@ Every row uses one metric on one fixed set of missions Muse never saw during the
    solver scores 99.4% ([check](analysis/code_originality.py), [results](results/code_originality.csv)).
 
 <p align="center"><img src="media/stills/search_progress.png" width="900" alt="Score per attempt for both problems: start program, Muse workers, expert solver"></p>
+
+The same setup also runs with the open-weight **Muse Spark on Baseten**: on a third problem (space-probe routes) it raised the practice score from 100 to 139.5 in 164 min. The best program was not kept, so it has no held-out test (record and limits: [results/wandb/trajectory_233j2q1l/](results/wandb/trajectory_233j2q1l/)).
 
 ## What we do not claim
 
