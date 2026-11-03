@@ -109,7 +109,7 @@ python runner/local/run_local.py --task-dir tasks/my_problem --data-dir <dev dat
 
 ## Use it with your coding agent
 
-Paste one prompt into your coding agent (Claude Code, Codex, Cursor, OpenCode) in a clone of this repo.
+Paste one prompt into Muse Code or the coding agent of your choice, in a clone of this repo.
 
 **1. Run this project**
 
