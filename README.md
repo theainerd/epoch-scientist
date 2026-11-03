@@ -4,13 +4,6 @@
 writes the code, tests it and keeps only what scores better. We tested it on two satellite problems from AstroAgentBench,
 then ran its best program once on held-out missions and compared it with expert solvers.
 
-> **Meta Global AI Developer Hackathon 2026 · Push the Frontier · Indie track**<br>
-> **Built this week (26 Oct – 4 Nov 2026):** all code, task packs, runs, tests and analysis in this repo. It uses open-source
-> tools: AI-Scientist-v3 (Sakana AI), OpenCode and AstroAgentBench.<br>
-> **Meta model:** Meta Muse Wonder (`meta/muse-wonder-1.0`) does every research step.<br>
-> **Open weights:** Muse Spark on Baseten (meta-models/muse-spark-open) ran the same setup on a third problem.<br>
-> **Bonus prize:** Best Agentic Use-Case
-
 <p align="center"><a href="https://youtu.be/866FbIutjNQ"><img src="media/video/epoch_scientist_explainer.gif" width="900" alt="Highlights of the 2-minute Epoch Scientist explainer: the problem, 20 vs 15 vs 10 satellites, 23 of 23 missions, 67% of the gap"></a></p>
 
 <p align="center"><sub>Held-out Revisit mission: start program 20 satellites · expert solver 15 · <b>Meta Muse Wonder 10</b>, every place on time.<br>
