@@ -16,6 +16,9 @@ missions Muse Wonder never saw.
 | Score (higher is better) | 63.10 | **76.40** | 72.45 |
 | Satellites (fewer is better) | 18.8 | **14.9** | 17.0 |
 
+<p align="center"><img src="media/stills/score_climb.png" width="900" alt="Best score so far during each run: constellation design 69.82 to 77.82, photo scheduling 74.93 to 76.63"><br>
+<sub>Best score so far during one 2-hour run per problem, on the practice missions. Failed attempts are not shown.</sub></p>
+
 * Beat the expert solver on **18 of 20** new missions, with about 2 fewer satellites.
 * Photo scheduling: better than its start program on **23 of 23** held-out missions; closed 67% of the gap to the best-known schedule.
 * It found and fixed a bug in its own code (score 0 → 76.6).
