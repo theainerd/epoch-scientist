@@ -9,3 +9,18 @@ references:
   - type: article
     title: "AstroAgentBench: Evaluating Agentic Planning on Space Mission Planning Tasks"
     url: "https://arxiv.org/abs/2601.11354"
+  - type: article
+    title: "The Agentic Scientist: Orchestrating Coding Agents for Automated Scientific (Co-)Discovery"
+    authors:
+      - family-names: Lange
+        given-names: Robert Tjarko
+      - family-names: Grillotti
+        given-names: Luca
+      - family-names: Yamada
+        given-names: Yutaro
+      - family-names: Charakorn
+        given-names: Rujikorn
+      - family-names: Ha
+        given-names: David
+    year: 2026
+    url: "https://arxiv.org/abs/2610.18933"

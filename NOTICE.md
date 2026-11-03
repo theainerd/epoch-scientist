@@ -8,9 +8,17 @@
 | AI-Scientist-v3, OpenCode, headless-cli | downloaded at run time by the Kaggle runner | Apache-2.0 / MIT (see upstream) |
 | brahe 1.8.0 (astrodynamics) | pip dependency | MIT |
 
-AstroAgentBench MIT licence text: Permission is hereby granted, free of charge, to any person obtaining a copy of this
-software and associated documentation files (the "Software"), to deal in the Software without restriction, ... The above
-copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-(Full text: https://github.com/Mtrya/AstroAgentBench/blob/main/LICENSE)
+Full licence texts are in [LICENSES/](LICENSES/):
+
+* [AstroAgentBench-MIT.txt](LICENSES/AstroAgentBench-MIT.txt): MIT, Copyright (c) 2026 OpenMOSS-Team. It covers the two verifier
+  files copied into `tasks/` (kept byte-identical to the official code, so the notice is kept here, not in the files).
+* [AI-Scientist-v3-Apache-2.0.txt](LICENSES/AI-Scientist-v3-Apache-2.0.txt): Apache-2.0 (Sakana AI). It covers
+  `runner/patches/meta_provider.patch`. Changes made to AI-Scientist-v3 (Apache-2.0, section 4b), all in that patch: it adds
+  a Meta Model API provider config for OpenCode (`configs/opencode/opencode.meta.json`, `configs/opencode/README.md`), lets the
+  agent wrappers pass `MODEL_API_KEY` for `meta/*` and `muse*` models (`src/scripts/lib/container_agent.sh`,
+  `src/scripts/variant_agent.sh`) and adjusts how the headless agent command is started (`src/investigation/script_runners.py`).
+
+AI-Scientist-v3 is described in: R. T. Lange, L. Grillotti, Y. Yamada, R. Charakorn, D. Ha, "The Agentic Scientist: Orchestrating
+Coding Agents for Automated Scientific (Co-)Discovery", arXiv:2610.18933 (2026).
 
 "Meta" and "Muse" are trademarks of Meta Platforms, Inc.; they are used here only to name the model that was used.
